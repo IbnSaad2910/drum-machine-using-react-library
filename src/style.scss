@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+$width: 100px;
+$height: 80px;
+
+body {
+  font-family: "Montserrat", Arial, sans-serif;
+  user-select: none;
+  background-color: #A7C38E;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 100vh;
+}
+
+#drum-machine {
+  outline: 5px solid #479700;
+  position: relative;
+  width: 660px;
+  text-align: center;
+  background-color: #E4F7D2;
+  box-shadow: 9px 12px 10px black;
+  #drum-pads {
+    width: $width * 3 + 32;
+    height: $height * 3 + 32;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(3,minmax(20px,100px));
+    grid-template-rows: 60px 60px 60px;
+    grid-gap: 30px;
+    .drum-pad {
+      width: $width;
+      height: $height;
+      margin-right: 10px;
+      border-radius: 5px;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+  }
+}
+
+
+
+.logo {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  .inner-logo { 
+    display: inline-block;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+
+#display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $width * 2;
+  border: 3px solid;
+  font-size: 30px;
+  font-family: "Russo One", Arial, sans-serif;
+  padding: 5px 0;
+  background-color: #479700;
+  margin: 45px auto -45px auto;
+}
+
+@media screen and (max-width: 650px) {
+  #drum-machine {
+    transform: scale(0.7);
+  }
+}
+
